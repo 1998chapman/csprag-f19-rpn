@@ -7,6 +7,7 @@ operators = {
     '-': operator.sub,
     '*': operator.mul,
     '/': operator.floordiv,
+    '^': operator.pow,
 }
 
 def calculate(string):
@@ -16,10 +17,7 @@ def calculate(string):
             value = int(token)
             stack.append(value)
         except ValueError:
-            try:
-                function = operator.__dir__[token]
-            except KeyError:
-                function = operators[token]
+            function = operators[token]
             arg2 = stack.pop()
             arg1 = stack.pop()
             result = function(arg1, arg2)
