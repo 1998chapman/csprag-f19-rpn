@@ -1,0 +1,7 @@
+language: python
+
+services:
+        - python3
+
+script:
+        - python3 test_rpn.py
